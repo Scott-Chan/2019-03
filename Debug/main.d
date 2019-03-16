@@ -19,6 +19,8 @@ main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
 main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h
 main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h
 main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h
+main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/fpu.h
+main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/qei.h
 main.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
 main.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdarg.h
 main.obj: ../drivers/ADC.h
@@ -48,6 +50,8 @@ D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h:
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h: 
+D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/fpu.h: 
+D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/qei.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h: 
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdarg.h: 
 ../drivers/ADC.h: 

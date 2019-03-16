@@ -17,6 +17,8 @@
 #include "driverlib/pwm.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/uart.h"
+#include "driverlib/fpu.h"
+#include "driverlib/qei.h"
 
 #include "utils/uartstdio.h"
 
@@ -29,19 +31,37 @@
 #include "drivers/UART.h"
 
 extern uint8_t count;
+extern volatile bool  bDataReady;
+extern uint32_t Ch0Value;
+struct
+{
+    uint32_t    Angel_Pos;      //角度位置
+    int32_t     Angel_Velocity; //角速度
+}QEI_Augledata;
 
 void main(void)
 {
     SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);
+    FPULazyStackingEnable();
+    FPUEnable();
 
     LEDInit();
     KEYInit();
     PWMInit();
     UARTInit();
+    ADCInit();
+    QEI_Config();
     IntMasterEnable();
     while(1)
     {
+        //ADC interrupt
+        ADC_Trig();
+        while(true != bDataReady)
+            ;
+        bDataReady = false;
+        UARTprintf("ch0:%4umv", Ch0Value);
+        //KEY interrupt test
         switch(count)
         {
         case 0:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,0);break;
@@ -50,5 +70,16 @@ void main(void)
         case 3:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_3);break;
         }
         GPIOIntEnable(GPIO_PORTF_BASE, GPIO_PIN_4|GPIO_PIN_0);
+        //QEI
+        QEIIntDisable(QEI0_BASE,QEI_INTDIR | QEI_INTTIMER);
+        if(qei_data_array[0].velocity>0)
+        {
+            QEI_Augledata.Angel_Velocity = (int)(qei_data_array[0].velocity*0.4014+0.5); //x°/s
+        }
+        else
+        {
+            QEI_Augledata.Angel_Velocity = (int)(qei_data_array[0].velocity*0.4014-0.5); //x°/s
+        }
+        QEIIntEnable(QEI0_BASE,QEI_INTDIR | QEI_INTTIMER);
     }
 }
