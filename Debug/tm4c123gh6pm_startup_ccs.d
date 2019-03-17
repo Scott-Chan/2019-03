@@ -9,7 +9,10 @@ tm4c123gh6pm_startup_ccs.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18
 tm4c123gh6pm_startup_ccs.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/machine/_stdint.h
 tm4c123gh6pm_startup_ccs.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/sys/_stdint.h
 tm4c123gh6pm_startup_ccs.obj: ../drivers/KEY.h
-tm4c123gh6pm_startup_ccs.obj: ../drivers/UART.h
+tm4c123gh6pm_startup_ccs.obj: ../drivers/UART3.h
+tm4c123gh6pm_startup_ccs.obj: ../drivers/ADC.h
+tm4c123gh6pm_startup_ccs.obj: ../drivers/QEI.h
+tm4c123gh6pm_startup_ccs.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdbool.h
 
 ../tm4c123gh6pm_startup_ccs.c: 
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdint.h: 
@@ -20,4 +23,7 @@ E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/machine/_type
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/machine/_stdint.h: 
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/sys/_stdint.h: 
 ../drivers/KEY.h: 
-../drivers/UART.h: 
+../drivers/UART3.h: 
+../drivers/ADC.h: 
+../drivers/QEI.h: 
+E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdbool.h: 

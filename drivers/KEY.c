@@ -5,6 +5,9 @@
  *      Author: Chan
  */
 
+//KEY
+//PF0 PF4
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
