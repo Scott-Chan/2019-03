@@ -12,7 +12,9 @@ C_SRCS += \
 ../drivers/PID.c \
 ../drivers/PWM.c \
 ../drivers/QEI.c \
-../drivers/UART.c 
+../drivers/UART.c \
+../drivers/UART2.c \
+../drivers/UART3.c 
 
 C_DEPS += \
 ./drivers/ADC.d \
@@ -21,7 +23,9 @@ C_DEPS += \
 ./drivers/PID.d \
 ./drivers/PWM.d \
 ./drivers/QEI.d \
-./drivers/UART.d 
+./drivers/UART.d \
+./drivers/UART2.d \
+./drivers/UART3.d 
 
 OBJS += \
 ./drivers/ADC.obj \
@@ -30,7 +34,9 @@ OBJS += \
 ./drivers/PID.obj \
 ./drivers/PWM.obj \
 ./drivers/QEI.obj \
-./drivers/UART.obj 
+./drivers/UART.obj \
+./drivers/UART2.obj \
+./drivers/UART3.obj 
 
 OBJS__QUOTED += \
 "drivers\ADC.obj" \
@@ -39,7 +45,9 @@ OBJS__QUOTED += \
 "drivers\PID.obj" \
 "drivers\PWM.obj" \
 "drivers\QEI.obj" \
-"drivers\UART.obj" 
+"drivers\UART.obj" \
+"drivers\UART2.obj" \
+"drivers\UART3.obj" 
 
 C_DEPS__QUOTED += \
 "drivers\ADC.d" \
@@ -48,7 +56,9 @@ C_DEPS__QUOTED += \
 "drivers\PID.d" \
 "drivers\PWM.d" \
 "drivers\QEI.d" \
-"drivers\UART.d" 
+"drivers\UART.d" \
+"drivers\UART2.d" \
+"drivers\UART3.d" 
 
 C_SRCS__QUOTED += \
 "../drivers/ADC.c" \
@@ -57,6 +67,8 @@ C_SRCS__QUOTED += \
 "../drivers/PID.c" \
 "../drivers/PWM.c" \
 "../drivers/QEI.c" \
-"../drivers/UART.c" 
+"../drivers/UART.c" \
+"../drivers/UART2.c" \
+"../drivers/UART3.c" 
 
 

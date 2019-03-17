@@ -8,7 +8,7 @@
 #ifndef DRIVERS_UART_H_
 #define DRIVERS_UART_H_
 
-extern void UARTInit(void);
+extern void UART0Init(void);
 extern void UART0IntHandler(void);
 
 

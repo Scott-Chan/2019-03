@@ -34,7 +34,7 @@ void UART0IntHandler(void)
     UARTIntClear(UART0_BASE, ui32IntStatus);
 }
 
-void UARTInit(void)
+void UART0Init(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA))

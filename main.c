@@ -28,7 +28,8 @@
 #include "drivers/PID.h"
 #include "drivers/PWM.h"
 #include "drivers/QEI.h"
-#include "drivers/UART.h"
+//#include "drivers/UART.h"
+#include "drivers/UART3.h"
 
 extern uint8_t count;
 extern volatile bool  bDataReady;
@@ -49,7 +50,7 @@ void main(void)
     LEDInit();
     KEYInit();
     PWMInit();
-    UARTInit();
+    UART3Init();
     ADCInit();
     QEI_Config();
     IntMasterEnable();
