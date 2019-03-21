@@ -61,15 +61,15 @@ void main(void)
         while(true != bDataReady)
             ;
         bDataReady = false;
-        UARTprintf("ch0:%4umv", Ch0Value);
+//        UARTprintf("ch0:%4umv", Ch0Value);
         //KEY interrupt test
-        switch(count)
-        {
-        case 0:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,0);break;
-        case 1:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1);break;
-        case 2:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_2);break;
-        case 3:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_3);break;
-        }
+//        switch(count)
+//        {
+//        case 0:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,0);break;
+//        case 1:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1);break;
+//        case 2:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_2);break;
+//        case 3:GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_3);break;
+//        }
         GPIOIntEnable(GPIO_PORTF_BASE, GPIO_PIN_4|GPIO_PIN_0);
         //QEI
         QEIIntDisable(QEI0_BASE,QEI_INTDIR | QEI_INTTIMER);

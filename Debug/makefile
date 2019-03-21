@@ -16,6 +16,7 @@ ORDERED_OBJS += \
 "./drivers/ADC.obj" \
 "./drivers/KEY.obj" \
 "./drivers/LED.obj" \
+"./drivers/MODE.obj" \
 "./drivers/PID.obj" \
 "./drivers/PWM.obj" \
 "./drivers/QEI.obj" \
@@ -168,8 +169,8 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "drivers\ADC.obj" "drivers\KEY.obj" "drivers\LED.obj" "drivers\PID.obj" "drivers\PWM.obj" "drivers\QEI.obj" "drivers\UART.obj" "drivers\UART2.obj" "drivers\UART3.obj" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "drivers\ADC.d" "drivers\KEY.d" "drivers\LED.d" "drivers\PID.d" "drivers\PWM.d" "drivers\QEI.d" "drivers\UART.d" "drivers\UART2.d" "drivers\UART3.d" 
+	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "drivers\ADC.obj" "drivers\KEY.obj" "drivers\LED.obj" "drivers\MODE.obj" "drivers\PID.obj" "drivers\PWM.obj" "drivers\QEI.obj" "drivers\UART.obj" "drivers\UART2.obj" "drivers\UART3.obj" 
+	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "drivers\ADC.d" "drivers\KEY.d" "drivers\LED.d" "drivers\MODE.d" "drivers\PID.d" "drivers\PWM.d" "drivers\QEI.d" "drivers\UART.d" "drivers\UART2.d" "drivers\UART3.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
