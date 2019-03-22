@@ -65,22 +65,22 @@ void UART3IntHandler(void)
         }
     }
 
-    if(1 == UARTDataDeal(ui8RxBuffer))
-    {
-        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1);
-    }
-    else if(2 == UARTDataDeal(ui8RxBuffer))
-    {
-        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_2);
-    }
-    else if(3 == UARTDataDeal(ui8RxBuffer))
-    {
-        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_3);
-    }
-    else
-    {
-        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
-    }
+//    if(1 == UARTDataDeal(ui8RxBuffer))
+//    {
+//        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1);
+//    }
+//    else if(2 == UARTDataDeal(ui8RxBuffer))
+//    {
+//        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_2);
+//    }
+//    else if(3 == UARTDataDeal(ui8RxBuffer))
+//    {
+//        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_3);
+//    }
+//    else
+//    {
+//        GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+//    }
 }
 
 void UART3Init(void)

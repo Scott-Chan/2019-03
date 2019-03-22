@@ -29,7 +29,9 @@ main.obj: ../drivers/KEY.h
 main.obj: ../drivers/PID.h
 main.obj: ../drivers/PWM.h
 main.obj: ../drivers/QEI.h
+main.obj: ../drivers/UART.h
 main.obj: ../drivers/UART3.h
+main.obj: ../drivers/MODE.h
 
 ../main.c: 
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdint.h: 
@@ -60,4 +62,6 @@ E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdarg.h:
 ../drivers/PID.h: 
 ../drivers/PWM.h: 
 ../drivers/QEI.h: 
+../drivers/UART.h: 
 ../drivers/UART3.h: 
+../drivers/MODE.h: 

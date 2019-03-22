@@ -20,6 +20,7 @@
 #include "driverlib/interrupt.h"
 
 extern uint8_t count=1;
+extern uint32_t PWM_DUTY;
 
 void KEYIntHandler(void)
 {
@@ -32,8 +33,10 @@ void KEYIntHandler(void)
         if((ui32IntStatus & GPIO_PIN_4) == GPIO_PIN_4)
         {
             //TODO:Key interrupt issue
-            count++;
-            count=count>3?3:count;
+            //count++;
+            //count=count>3?3:count;
+            PWM_DUTY+=5;
+            PWM_DUTY=PWM_DUTY>100?100:PWM_DUTY;
         }
         GPIOIntDisable(GPIO_PORTF_BASE, GPIO_PIN_4);
     }
@@ -43,8 +46,10 @@ void KEYIntHandler(void)
         if((ui32IntStatus & GPIO_PIN_0) == GPIO_PIN_0)
         {
             //TODO:Key interrupt issue
-            count--;
-            count=count<1?1:count;
+            //count--;
+            //count=count<1?1:count;
+            PWM_DUTY-=5;
+            PWM_DUTY=PWM_DUTY<=0?1:PWM_DUTY;
         }
         GPIOIntDisable(GPIO_PORTF_BASE, GPIO_PIN_0);
     }

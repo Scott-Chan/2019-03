@@ -18,8 +18,22 @@
 
 #include "drivers/MODE.h"
 
+uint8_t mode1flag=1;
+
 void mode1(void)
 {
+    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+    if(mode1flag)
+    {
+        SysCtlDelay(217*(SysCtlClockGet()/3000));
+        mode1flag=0;
+    }
+    else
+    {
+        SysCtlDelay(437*(SysCtlClockGet()/3000));
+    }
+    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_1);
+    SysCtlDelay(437*(SysCtlClockGet()/3000));
 
 }
 
