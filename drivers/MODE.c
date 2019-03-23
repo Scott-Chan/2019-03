@@ -18,27 +18,65 @@
 
 #include "drivers/MODE.h"
 
-uint8_t mode1flag=1;
+extern uint32_t PWM_DUTY;
+extern int32_t angledata[2];
+static int mode1flag=1;
+static int mode2flag=1;
 
 void mode1(void)
 {
-    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
-    if(mode1flag)
+    PWM_DUTY=72;
+    if(mode1flag==1)
     {
-        SysCtlDelay(217*(SysCtlClockGet()/3000));
+        GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+        SysCtlDelay(50*SysCtlClockGet()/3000);
         mode1flag=0;
+    }
+    //GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+    if(angledata[0]<0)
+    {
+        if(angledata[0]-angledata[1]>0)
+        {
+            GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_1);
+            SysCtlDelay(300*SysCtlClockGet()/3000);
+        }
     }
     else
     {
-        SysCtlDelay(437*(SysCtlClockGet()/3000));
+        if(angledata[0]-angledata[1]<0)
+        {
+            GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+            SysCtlDelay(300*SysCtlClockGet()/3000);
+        }
     }
-    GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_1);
-    SysCtlDelay(437*(SysCtlClockGet()/3000));
-
 }
 
 void mode2(void)
 {
+    PWM_DUTY=80;
+    if(mode2flag==1)
+    {
+        GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+        SysCtlDelay(50*SysCtlClockGet()/3000);
+        mode2flag=0;
+    }
+    //GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+    if(angledata[0]<0)
+    {
+        if(angledata[0]-angledata[1]>0)
+        {
+            GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_1);
+            SysCtlDelay(300*SysCtlClockGet()/3000);
+        }
+    }
+    else
+    {
+        if(angledata[0]-angledata[1]<0)
+        {
+            GPIOPinWrite(GPIO_PORTB_BASE,GPIO_PIN_0|GPIO_PIN_1,GPIO_PIN_0);
+            SysCtlDelay(300*SysCtlClockGet()/3000);
+        }
+    }
 
 }
 

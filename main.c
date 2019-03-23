@@ -36,6 +36,10 @@ extern uint8_t count;
 extern volatile bool  bDataReady;
 extern uint32_t Ch0Value;
 extern uint32_t PWM_DUTY;
+int32_t angle;
+int32_t angledata[2];
+uint8_t i;
+
 struct
 {
     uint32_t    Angel_Pos;      //½Ç¶ÈÎ»ÖÃ
@@ -43,7 +47,7 @@ struct
 }QEI_Augledata;
 
 void main(void)
- {
+{
     SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);
     FPULazyStackingEnable();
@@ -95,5 +99,12 @@ void main(void)
 
         PWMPulseWidthSet(PWM1_BASE,PWM_OUT_2,
                          (PWMGenPeriodGet(PWM1_BASE, PWM_GEN_1)*PWM_DUTY) / 100);
+        angledata[i] = (int)(((int)Ch0Value-1650)*180/1650.0);
+        i++;
+        i=i>1?0:i;
+        UARTprintf("angle:%3d\n",angledata[i]);
+        UARTprintf("duty:%3d\n",PWM_DUTY);
+        //SysCtlDelay(100*(SysCtlClockGet()/3000));
+        mode2();
     }
 }
