@@ -19,6 +19,9 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
 
+#include "drivers/PID.h"
+
+extern PID PID_Balance;
 extern uint8_t count=1;
 extern uint32_t PWM_DUTY;
 
@@ -35,8 +38,9 @@ void KEYIntHandler(void)
             //TODO:Key interrupt issue
             //count++;
             //count=count>3?3:count;
-            PWM_DUTY+=1;
-            PWM_DUTY=PWM_DUTY>100?100:PWM_DUTY;
+            //PWM_DUTY+=1;
+            //PWM_DUTY=PWM_DUTY>100?100:PWM_DUTY;
+            PID_Balance.Kd+=5;
         }
         GPIOIntDisable(GPIO_PORTF_BASE, GPIO_PIN_4);
     }
@@ -48,8 +52,9 @@ void KEYIntHandler(void)
             //TODO:Key interrupt issue
             //count--;
             //count=count<1?1:count;
-            PWM_DUTY-=1;
-            PWM_DUTY=PWM_DUTY<=0?1:PWM_DUTY;
+            //PWM_DUTY-=1;
+            //PWM_DUTY=PWM_DUTY<=0?1:PWM_DUTY;
+            PID_Balance.Kd-=5;
         }
         GPIOIntDisable(GPIO_PORTF_BASE, GPIO_PIN_0);
     }

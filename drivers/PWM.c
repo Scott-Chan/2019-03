@@ -22,7 +22,7 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/pwm.h"
 
-#define PWM_FREQUENCY 1000
+#define PWM_FREQUENCY 10000
 extern uint32_t PWM_DUTY=70;
 
 void PWMInit(void)

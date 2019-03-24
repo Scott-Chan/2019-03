@@ -32,6 +32,7 @@
 #include "drivers/UART3.h"
 #include "drivers/MODE.h"
 
+extern PID PID_Balance;
 extern uint8_t count;
 extern volatile bool  bDataReady;
 extern uint32_t Ch0Value;
@@ -66,10 +67,10 @@ void main(void)
 //    UART3Init();
     ADCInit();
 //    QEI_Config();
+    PID_Balance_Init();
     IntMasterEnable();
     while(1)
     {
-        //mode1();
         //ADC interrupt
         ADC_Trig();
         while(true != bDataReady)
@@ -99,12 +100,13 @@ void main(void)
 
         PWMPulseWidthSet(PWM1_BASE,PWM_OUT_2,
                          (PWMGenPeriodGet(PWM1_BASE, PWM_GEN_1)*PWM_DUTY) / 100);
-        angledata[i] = (int)(((int)Ch0Value-1650)*180/1650.0);
+        angledata[i] = (((int)Ch0Value-1650)*180/1650.0);
         i++;
         i=i>1?0:i;
         UARTprintf("angle:%3d\n",angledata[i]);
         UARTprintf("duty:%3d\n",PWM_DUTY);
+        UARTprintf("Kd:%d\n",(int)(PID_Balance.Kd*100));
         //SysCtlDelay(100*(SysCtlClockGet()/3000));
-        mode2();
+        mode1();
     }
 }

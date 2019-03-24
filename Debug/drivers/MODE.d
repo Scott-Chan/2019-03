@@ -18,6 +18,7 @@ drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.
 drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
 drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h
 drivers/MODE.obj: E:/Software/Workspace/19-3-15/drivers/MODE.h
+drivers/MODE.obj: E:/Software/Workspace/19-3-15/drivers/PID.h
 
 ../drivers/MODE.c: 
 E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdint.h: 
@@ -37,3 +38,4 @@ D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h:
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h: 
 E:/Software/Workspace/19-3-15/drivers/MODE.h: 
+E:/Software/Workspace/19-3-15/drivers/PID.h: 
