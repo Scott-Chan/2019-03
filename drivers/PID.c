@@ -17,10 +17,10 @@ void PID_Balance_Init(void)
     PID_Balance.Err          =  0.0;
 //    PID_Balance.Err_Last     =  0.0;
 //    PID_Balance.Err_2Last    =  0.0;
-//    PID_Balance.Integral     =  0.0;
-    PID_Balance.Kp           =  7.82;//float //~=8.68  //~=7.82()
+    PID_Balance.Integral     =  0.0;
+    PID_Balance.Kp           =  9.2;//float //~=8.68  //~=7.82() //6.91
     PID_Balance.Ki           =  0.0;//float
-    PID_Balance.Kd           =  50.0;//float
+    PID_Balance.Kd           =  15.0;//float //25||50
     PID_Balance.Output       =  0.0;//float
 }
 
@@ -31,7 +31,7 @@ void PID_Position_Init(void)
     PID_Position.Err          =  0.0;
 //    PID_Position.Err_Last     =  0.0;
 //    PID_Position.Err_2Last    =  0.0;
-//    PID_Position.Integral     =  0.0;
+    PID_Position.Integral     =  0.0;
     PID_Position.Kp           =  0.0;//float
     PID_Position.Ki           =  0.0;//float
     PID_Position.Kd           =  0.0;//float
@@ -56,4 +56,19 @@ float PIDBalance_Realize(float Actual)//角度环，Actual = pitch; Target = 0
     return PID_Balance.Output;
 }
 
+float PIDPosition_Realize(float Actual)//位置环
+{
+    static float Speed_LPF=0 , Last_Position=0;
 
+    PID_Position.Actual_Value = Actual;
+    PID_Position.Err          = PID_Position.Actual_Value - PID_Position.Target_Value ;
+
+    Speed_LPF *= 0.8;                 //一阶低通滤波器
+    Speed_LPF += PID_Position.Err*0.2;//一阶低通滤波器
+
+    PID_Position.Integral = Speed_LPF-Last_Position;
+    Last_Position = Speed_LPF;
+    PID_Position.Output = PID_Position.Kp*Speed_LPF + PID_Position.Kd*PID_Position.Integral;
+
+    return PID_Position.Output;
+}

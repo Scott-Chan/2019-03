@@ -105,8 +105,10 @@ void main(void)
         i=i>1?0:i;
         UARTprintf("angle:%3d\n",angledata[i]);
         UARTprintf("duty:%3d\n",PWM_DUTY);
+        UARTprintf("Kp:%d\n",(int)(PID_Balance.Kp*100));
         UARTprintf("Kd:%d\n",(int)(PID_Balance.Kd*100));
+
         //SysCtlDelay(100*(SysCtlClockGet()/3000));
-        mode1();
+        mode4();
     }
 }

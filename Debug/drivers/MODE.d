@@ -17,6 +17,8 @@ drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_m
 drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h
 drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h
 drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h
+drivers/MODE.obj: D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
+drivers/MODE.obj: E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdarg.h
 drivers/MODE.obj: E:/Software/Workspace/19-3-15/drivers/MODE.h
 drivers/MODE.obj: E:/Software/Workspace/19-3-15/drivers/PID.h
 
@@ -37,5 +39,7 @@ D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h:
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/sysctl.h: 
 D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/driverlib/pwm.h: 
+D:/Software/TM4/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h: 
+E:/Software/TM4/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdarg.h: 
 E:/Software/Workspace/19-3-15/drivers/MODE.h: 
 E:/Software/Workspace/19-3-15/drivers/PID.h: 
